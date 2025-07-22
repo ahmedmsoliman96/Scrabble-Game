@@ -46,12 +46,12 @@ public class GADDAGNode {
         terminalArcs |= 1 << positions;
     }
 
-    public GADDAGNode getChildNode(char arcChar) {
+    public GADDAGNode getChildNode(char transitionChar) {
         // get number of positions needed to shift 1 to make bitFlag
-        int positions = arcChar - 'A';
+        int positions = transitionChar - 'A';
         if(((1<<positions) & transitionArcs)!=0) {
             //childArc - 'A' will give us the index
-            return children[arcChar -'A'];
+            return children[transitionChar -'A'];
         }
         return null;
     }
