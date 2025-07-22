@@ -56,6 +56,15 @@ public class GADDAGNode {
         return null;
     }
 
+    // checks if GADDAGNode has char as terminalArc indicating a completed word
+    public boolean hasCharAsTerminal(char terminalChar) {
+        int positions = terminalChar - 'A';
+        if(((1<<positions) & terminalArcs)!=0) {
+            return true;
+        }
+        return false;
+    }
+
     public GADDAGNode[] getChildren() {
         return children;
     }
