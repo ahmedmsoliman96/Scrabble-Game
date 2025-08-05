@@ -30,5 +30,14 @@ public class Tile {
         }
         return false;
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true; // Same reference
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false; // Null or different class
+        }
+        return this.letter == ((Tile) obj).getLetter();
+    }
 }
